@@ -1,6 +1,6 @@
 /*
 Theme Name: Platz
-Theme URI: 
+Theme URI:
 Author: Dcrazed
 Author URI: https://dcrazed.com/
 Description: Platz is a free grid wordpress theme with responsive design for showing digital products, freebies similar to websites like freepik. Let your users upload images, content to your website and have their own author marketplace.
@@ -9,7 +9,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, four-columns, responsive-layout, featured-images, fixed-width-template, blogging, freebie
 Text Domain: platz
-    
+
 */
 
 /*-------------------------*/
@@ -50,8 +50,8 @@ a {
 	text-decoration:none;
 }
 
-ul { 
-	list-style-type: none; 
+ul {
+	list-style-type: none;
 	margin:0;
 	padding:0;
 }
@@ -91,13 +91,13 @@ body,html{
 ::-webkit-scrollbar {
     width: 9px;
 }
- 
+
 ::-webkit-scrollbar-track {
     background:#eee;
     border: thin solid lightgray;
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1) inset;
 }
- 
+
 ::-webkit-scrollbar-thumb {
     background:#999;
     border: thin solid gray;
@@ -307,7 +307,7 @@ body,html{
 
 .work figure {
     float:left;
-	width:calc(100% / 4 - 30px);
+	  width:calc(100% / 4 - 30px);
     height:auto;
     line-height:auto;
     position: relative;
@@ -345,7 +345,7 @@ body,html{
     top: 0;
     padding: 10px;
     margin: 0;
-    line-height: 2.5; 
+    line-height: 2.5;
     color: white;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -387,7 +387,7 @@ body,html{
 	width:80%;
 	margin-left:10%;
 	text-align:left;
-	
+
 }
 
 #wrapper-part-info{
@@ -444,8 +444,8 @@ body,html{
 
 .premium-ressource a,.themes a,.psd a,.ai a,.font a,.photo a{
 	transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out; 
-    -moz-transition: all 0.2s ease-in-out; 
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
 }
 
@@ -579,7 +579,7 @@ body,html{
 	border-radius: 5px;
 	-moz-appearance: none;
 	-webkit-appearance: none;
-    box-shadow: none; 
+    box-shadow: none;
 	outline: 0;
 	background: url(img/icon-newsletter.svg) no-repeat 10px 9px;
 	margin-left:20px;
@@ -609,7 +609,7 @@ body,html{
 	border-radius: 5px;
 	-moz-appearance: none;
 	-webkit-appearance: none;
-    box-shadow: none; 
+    box-shadow: none;
 	outline: 0;
 	margin: 0;
 	background: url(img/icon-search.svg) no-repeat 12px 7px;
@@ -696,7 +696,7 @@ body,html{
 /*----------------------------*/
 
 /* Others wide screen -2 */
- 
+
 @media only screen and (max-width: 2000px) {
 #main-container-menu {
 	display:none;
@@ -704,7 +704,7 @@ body,html{
 }
 
 /* Others wide screen */
- 
+
 @media only screen and (max-width: 1200px) {
 #main-header,.navbar,.container,.container-footer,.thank,.oldnew,.copyright {
 	width:940px;
@@ -719,8 +719,8 @@ body,html{
 }
 }
 
-/* Small viewports — Old monitors, netbooks, tablets (landscape), etc. */
- 
+/* Small viewports ï¿½ Old monitors, netbooks, tablets (landscape), etc. */
+
 @media only screen and (max-width: 965px) {
 #main-header,.navbar,.container,.container-footer,.thank,.oldnew,.copyright {
 	width:835px;
@@ -757,8 +757,8 @@ body,html{
 }
 }
 
-/* Smaller viewports — more tablets, old monitors */
- 
+/* Smaller viewports ï¿½ more tablets, old monitors */
+
 @media only screen and (max-width: 860px) {
 #main-header,.navbar,.container,.container-footer,.thank,.oldnew,.copyright {
 	width:715px;
@@ -769,13 +769,13 @@ body,html{
 }
 }
 
-/* Even smaller viewports — more tablets, etc. */
- 
+/* Even smaller viewports ï¿½ more tablets, etc. */
+
 @media only screen and (max-width: 740px) {
 #main-header,.navbar,.container,.container-footer,.thank,.oldnew,.copyright {
 	width:585px;
 	margin-left:-292.5px;
-}   
+}
 #wrapper-bouton-icon,#main_tip_search{
 	display:none;
 }
@@ -791,12 +791,12 @@ body,html{
 }
 
 /* Mobile phones (Landscape) and Tablets (Portrait) */
- 
+
 @media only screen and (max-width: 610px) {
 #main-header,.navbar,.container,.container-footer,.thank,.oldnew,.copyright {
 	width:455px;
 	margin-left:-227.5px;
-} 
+}
 #wrapper-sorting{
 	position:relative;
 	width:300px;
@@ -814,7 +814,7 @@ body,html{
 }
 
 /* Mobile phones (Landscape) and Tablets (Portrait) */
- 
+
 @media only screen and (max-width: 480px) {
 #main-header,.navbar,.container,.container-footer,.thank,.oldnew,.copyright {
 	width:295px;
@@ -835,8 +835,7 @@ body,html{
 }
 }
 /* Mobile phones (iphone4/5)*/
- 
+
 @media only screen and (max-width: 320px) {
 
 }
-

@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'WorkController@index')->name('app_homepage');
+
+Route::get('works/{id}/{slug}', 'WorkController@show')->name('app_work_show');
