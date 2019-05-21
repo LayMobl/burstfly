@@ -13,4 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('app_homepage');
+
+//NEWSLETTER
+Route::post('newsletter','NewsletterController@store')->name('newsletter');
