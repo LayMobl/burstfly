@@ -17,3 +17,10 @@ Route::get('/', function () {
 
 //NEWSLETTER
 Route::post('newsletter','NewsletterController@store')->name('newsletter');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');;
