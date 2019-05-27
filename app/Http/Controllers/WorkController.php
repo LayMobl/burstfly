@@ -17,12 +17,18 @@ class WorkController extends Controller
 
     public function index()
     {
-        return view('works.index', ['works' => Work::all()]);
+        return view('works.index', ['works' => Work::simplePaginate(16)]);
     }
     public function show($id)
     {
-        
+
         return view('works.show', ['work' => Work::find($id)]);
+    }
+
+    public function more($id)
+    {
+
+        return view('works.more', ['works' => Work::where('tag_id',$id)->limit(4)->get()]);
     }
 
 }

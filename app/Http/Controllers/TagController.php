@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Tag;
+use App\Work;
 use App\Http\Controllers\Controller;
 
 class TagController extends Controller
@@ -18,8 +19,10 @@ class TagController extends Controller
     {
         return view('tags.index', ['tags' => Tag::all()]);
     }
-    public function show()
+    public function show($id)
     {
-        return view('tags.show', ['tags' => Tag::all()]);
+
+        $works = Work::where('tag_id',$id)->simplePaginate(16);
+        return view('works.index', ['works' => $works]);
     }
 }

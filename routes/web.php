@@ -15,3 +15,5 @@
 Route::get('/', 'WorkController@index')->name('app_homepage');
 
 Route::get('works/{id}/{slug}', 'WorkController@show')->name('app_work_show');
+
+Route::get('tags/{id}/{slug}', 'TagController@show')->name('app_tag_show');
