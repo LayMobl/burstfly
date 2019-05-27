@@ -17,8 +17,10 @@
             <div class="text-row-4f"><span style="font-weight:600;font-size:15px;color:#666;line-height:250%;text-transform:uppercase;letter-spacing:1.5px;">Newsletter</span><br>You will be informed monthly about the latest content avalaible.</div>
 
       <div id="main_tip_newsletter">
-        <form>
-          <input type="text" name="newsletter" id="tip_newsletter_input" list="newsletter" autocomplete=off required>
+        <form id="newsletter" action="{{ route('newsletter') }}" method="post">
+            {{ csrf_field() }}
+            <input type="email" name="email" id="tip_newsletter_input" list="newsletter" autocomplete=off placeholder="Your email here" required>
+            <input style="display: none" id="newsletter-submit" type="submit">
         </form>
       </div>
           </div>
@@ -29,7 +31,7 @@
 
   <div id="wrapper-copyright">
   <div class="copyright">
-      <div class="copy-text object">Copyright © 2016. Template by <a style="color:#D0D1D4;" href="https://dcrazed.com/">Dcrazed</a></div>
+      <div class="copy-text object">Copyright © 2019. Template by <a style="color:#D0D1D4;" href="https://dcrazed.com/">Dcrazed</a></div>
 
     <div class="wrapper-navbouton">
         <div class="google object">g</div>
