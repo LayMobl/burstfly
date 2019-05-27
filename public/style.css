@@ -685,6 +685,20 @@ body,html{
 	color:#666;
 	opacity:1;
 }
+.newsletter-text {
+    font-weight: 300;
+    font-size: 15px;
+    color: #666;
+    line-height: 250%;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+#email {
+    font-weight: 800;
+    color: black;
+}
 
 .dribbble,.facebook,.linkin,.google{padding-right:20px;}
 .dribbble,.facebook,.linkin{padding-right:12px;}
