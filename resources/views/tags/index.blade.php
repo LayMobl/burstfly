@@ -6,7 +6,9 @@
 
               @foreach ($tags as $tag )
 
-            	<div id="{{'bouton-'.substr($tag->image,5,-4)}}"><img src="{{asset('img/'.$tag->image)}}" alt="{{$tag->name}}" title="{{$tag->name}}" height="28" width="28"></div>
+            	<a href="{{route('app_tag_show',['id' => $tag->id,'slug' => str_slug($tag->name,'-')]) }}" id="{{'bouton-'.substr($tag->image,5,-4)}}">
+								<img src="{{asset('img/'.$tag->image)}}" alt="{{$tag->name}}" title="{{$tag->name}}" height="28" width="28">
+							</a>
             	@endforeach
 			</div>
     	</div>

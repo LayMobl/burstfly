@@ -14,7 +14,9 @@
 	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<link href='{{asset('style.css')}}' rel='stylesheet' type='text/css'>
 
-
+	@if (Route::current()->getName() == 'app_work_show')
+  	<link href='{{asset('show.css')}}' rel='stylesheet' type='text/css'>
+	@endif
 
 </head>
 
