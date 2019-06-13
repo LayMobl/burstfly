@@ -11,7 +11,7 @@
             @foreach ($works as $work)
 						<figure class="white">
 							<a href="{{ route('app_work_show',['id' => $work->id,'slug' => str_slug($work->name,'-')]) }}">
-								<img src="{{asset('img/psd-4.jpg')}}" alt="" />
+								<img src="{{asset('storage/'.$work->image)}}" alt="" />
 								<dl>
 									<dt>{{$work->name}}</dt>
 									<dd>{{$work->description}}</dd>

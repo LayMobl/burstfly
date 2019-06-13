@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
  use Illuminate\Http\Request;
-
+use Illuminate\Http\Response;
 use App\Work;
 use App\Http\Controllers\Controller;
 
@@ -30,5 +30,12 @@ class WorkController extends Controller
 
         return view('works.more', ['works' => Work::where('tag_id',$id)->limit(4)->get()]);
     }
+
+    public function download()
+    {
+
+
+    }
+
 
 }

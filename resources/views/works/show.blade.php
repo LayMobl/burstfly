@@ -18,13 +18,13 @@
                 <div class="title-item">
                 	<div class="title-icon" style="background:url({{asset('img/title-icon-ps.svg')}})"></div>
                     <div class="title-text">{{$work->name}}</div>
-                    <div class="title-text-2">{{$work->created_at->format('d/m/Y') }} by Onuur</div>
+                    <div class="title-text-2">{{$work->created_at->format('d/m/Y') }} by {{$work->user->name}}</div>
                 </div>
 
 
 				<div class="work">
 					<figure class="white">
-							 <img src="{{asset('img/psd-4.jpg')}}" alt="" />
+							 <img src="{{asset('storage/'.$work->image)}}" alt="" />
 
                                         </figure>
 
@@ -40,8 +40,8 @@
                     	<div class="icon-weight"><img src="{{asset('img/icon-weight.svg')}}" alt="" width="20" height="23"/></div>
                         <div class="text-weight">
 												@php
-                        $filesize = filesize('img/psd-4.jpg')/1000;
-												echo (int)$filesize;
+                        $filesize = filesize('storage/'.$work->image)/1000;
+												echo (int)$filesize.' Mo';
 												@endphp</div>
                     </div>
 
@@ -52,7 +52,7 @@
 
                     <div class="wrapper-download">
                     	<div class="icon-download"><img src="{{asset('img/icon-download.svg')}}" alt="" width="19" height="26"/></div>
-                        <div class="text-download"><a href="#"><b>Download</b></a></div>
+                        <div class="text-download"><a href="{{ route('app_work_download',['slug' => str_slug($work->name,'-')]) }}"><b>Download</b></a></div>
                     </div>
 
                     <div class="wrapper-morefrom">

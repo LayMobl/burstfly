@@ -5,7 +5,7 @@
 
 
 
-  <a href="#"><div class="image-morefrom-{{$loop->index+1}}"><img src="{{asset('img/psd-1.jpg')}}" alt="" width="430" height="330"/></div></a>
+  <a href="{{ route('app_work_show',['id' => $work->id,'slug' => str_slug($work->name,'-')]) }}"><div class="image-morefrom-{{$loop->index+1}}"><img src="{{asset('storage/'.$work->image)}}" alt="" width="430" height="330"/></div></a>
 
       @endforeach
 </div>
