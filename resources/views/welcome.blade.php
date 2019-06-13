@@ -32,6 +32,7 @@
 <div id="wrapper-header">
 	<div id="main-header" class="object">
 		<div class="logo"><img src="{{asset('img/logo-burst.png')}}" alt="logo platz" height="38" width="90"></div>
+
         <div id="main_tip_search">
 			<form>
 				<input type="text" name="search" id="tip_search_input" list="search" autocomplete=off required>
@@ -39,6 +40,20 @@
 		</div>
         <div id="stripes"></div>
     </div>
+</div>
+<div style="background-color:#2E2D30;padding-left:7.3rem;">
+	@if (auth()->check())
+						@if (auth()->user()->isAdmin())
+
+								<div>
+									Hello {{Auth::user()->name}} <a href="{{url('admin')}}">Panneau d'administration</a> | <a href="{{route('logout')}}">(Logout)</a>
+								</div>
+						@else
+									<div>Hello {{Auth::user()->name}} <a href="{{url('app_homepage')}}">Mon profil</a> | <a href="{{route('logout')}}">(Logout)</a></div>
+						@endif
+@else
+ <a href="{{url('admin')}}">Se connecter</a>|<a href="">S'inscrire</a>
+@endif
 </div>
 
 <!-- NAVBAR -->
