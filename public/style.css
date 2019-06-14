@@ -224,6 +224,15 @@ body,html{
 	width:100%;
 	height:auto;
 }
+#title1{
+    float:left;
+    width:92.5%;
+    margin-left:7.5%;
+    height:68px;
+    margin-bottom:10px;
+    font-weight: bold;
+    font-size: 30px;
+}
 
 .container,.container-footer {
     position:relative;
@@ -769,6 +778,7 @@ body,html{
 	margin-left:-112.5px;
 	margin-bottom:75px;
 }
+
 }
 
 /* Smaller viewports � more tablets, old monitors */

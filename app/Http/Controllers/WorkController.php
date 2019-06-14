@@ -31,4 +31,10 @@ class WorkController extends Controller
         return view('works.more', ['works' => Work::where('tag_id',$id)->limit(4)->get()]);
     }
 
+    public function indexUser($id)
+    {
+
+        return view('works.indexUser', ['works' => Work::where('user_id',$id)->limit(8)->get()]);
+    }
+
 }

@@ -19,6 +19,11 @@ Route::get('works/{id}/{slug}', 'WorkController@show')->name('app_work_show');
 Route::get('tags/{id}/{slug}', 'TagController@show')->name('app_tag_show');
 
 
+//USER
+Route::get('users/{id}/{name}', 'UserController@show')->name('app_user_show');
+Route::get('users/{id}/{name}/edit', 'UserController@edit')->name('app_user_edit');
+Route::post('users/{id}/', 'UserController@update')->name('app_user_update');
+
 
 //NEWSLETTER
 Route::post('newsletter','NewsletterController@store')->name('newsletter');

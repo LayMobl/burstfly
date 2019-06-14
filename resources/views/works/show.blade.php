@@ -18,7 +18,7 @@
                 <div class="title-item">
                 	<div class="title-icon" style="background:url({{asset('img/title-icon-ps.svg')}})"></div>
                     <div class="title-text">{{$work->name}}</div>
-                    <div class="title-text-2">{{$work->created_at->format('d/m/Y') }} by Onuur</div>
+                    <div class="title-text-2">{{$work->created_at->format('d/m/Y') }} by {{$work->user->name}}</div>
                 </div>
 
 
@@ -103,5 +103,6 @@
 							<div class="thank-text">bu<span style="letter-spacing:-5px;">rs</span>tfly</div>
 					</div>
 			</div>
+    </div>
 
 @endsection
