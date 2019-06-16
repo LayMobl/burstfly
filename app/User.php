@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class User extends \TCG\Voyager\Models\User
 {
@@ -42,4 +44,18 @@ class User extends \TCG\Voyager\Models\User
     {
         return $this->hasMany('App\Work');
     }
+
+
+
+
+  public function isAdmin()
+ {
+    $result = $this->where('id',Auth::id())
+                   ->where('role_id', 1)
+                   ->first();
+    return $result;
+ }
+
+
+
 }
