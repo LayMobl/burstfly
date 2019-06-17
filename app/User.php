@@ -8,6 +8,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class User extends \TCG\Voyager\Models\User
 {
     use Notifiable;
@@ -38,6 +39,11 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function works()
+    {
+        return $this->hasMany('App\Work');
+    }
 
 
 
