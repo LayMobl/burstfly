@@ -40,7 +40,7 @@
                     	<div class="icon-weight"><img src="{{asset('img/icon-weight.svg')}}" alt="" width="20" height="23"/></div>
                         <div class="text-weight">
 												@php
-                        $filesize = filesize('storage/'.$work->image)/1000;
+                        $filesize = filesize('storage/'.$work->image)/10000;
 												echo (int)$filesize.' Mo';
 												@endphp</div>
                     </div>
@@ -52,7 +52,7 @@
 
                     <div class="wrapper-download">
                     	<div class="icon-download"><img src="{{asset('img/icon-download.svg')}}" alt="" width="19" height="26"/></div>
-                        <div class="text-download"><a href="{{ route('app_work_download',['slug' => str_slug($work->name,'-')]) }}"><b>Download</b></a></div>
+                        <div class="text-download"><a href="{{ route('app_work_download',['slug' => str_slug($work->name,'-'),'id' => $work->id,'file' => $work->file]) }}"><b>Download</b></a></div>
                     </div>
 
                     <div class="wrapper-morefrom">
@@ -70,27 +70,22 @@
 
 
                 	</div>
+									<div id="commentsContainer">
+										@inject('comments', 'App\Http\Controllers\CommentController')
+										{!! $comments->index($work->id) !!}
+									</div>
 
-                	<div class="post-reply">
-                    	<div class="image-reply-post"></div>
-                    	<div class="name-reply-post">Igor vlademir</div>
-                    	<div class="text-reply-post">Awesome mockup, i like it very much ! It will help me for my website i was looking for since few days. Thank you a lot.</div>
-                	</div>
 
-                    <div class="post-reply-2">
-                    	<div class="image-reply-post-2"></div>
-                    	<div class="name-reply-post-2">Nathan Shaw</div>
-                    	<div class="text-reply-post-2">Well done ! I like the way you did it. Awesome ! </div>
-                	</div>
 
-                	<div class="post-send">
+                	<div id="post-send" class="post-send"  @if (!auth()->check())style="display:none;"@endif>
                     	<div id="main-post-send">
                             <div id="title-post-send">Add your comment</div>
-							<form id="contact" method="post" action="/onclickprod/formsubmit_op.asp">
+							<form id="contact" method="get">
     							<fieldset>
 									<p><textarea id="message" name="message" maxlength="500" placeholder="Votre Message" tabindex="5" cols="30" rows="4"></textarea></p>
 								</fieldset>
-								<div style="text-align:center;"><input type="submit" name="envoi" value="Envoyer" /></div>
+								<div style="text-align:center;"><input id="ajaxSubmit" data-work ="{{$work->id}}"data-user="@if (auth()->check()){{Auth::user()->id}}@endif" data-url="{{ url('works/'.$work->id.'/'.str_slug($work->name,'-').'/comment') }}" type="submit" name="envoi" value="Envoyer"
+									 /></div>
   							</form>
                         </div>
 					</div>
