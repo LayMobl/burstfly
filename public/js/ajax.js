@@ -1,34 +1,35 @@
 $(function(){
-      $('#ajaxSubmit').click(function(e){
-               e.preventDefault();
-               var url = $(this).attr('data-url');
-          
-               var user = $(this).attr('data-user');
-               var message = $('#message').val();
-               var nbrMessage = $('#post-reply').length;
-               $.ajaxSetup({
-                  headers: {
-                      'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                  }
-              });
+    $('#ajaxSubmit').click(function(e){
+        e.preventDefault();
+        //Je récupère l'url
+        var url = $(this).attr('data-url');
+        //Je récupère l'utilisateur
+        var user = $(this).attr('data-user');
+        //Je récupère la valeur du message
+        var message = $('#message').val();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        });
 
 
-              $.ajax({
+        $.ajax({
             url:url,
-           data:{
-             message : message,
-             user: user,
-
-           },
-          method: 'GET',
-           success:function(reponsePHP){
+            data:{
+                message : message,
+                user: user,
+            },
+            method: 'GET',
+            success:function(reponsePHP){
+                //J'ajoute le nouveau commentaire avec animation en fin de liste
               $('#commentsContainer').last('.post-reply').append(reponsePHP).slideDown();
+                // Je vide le contenu du textarea
               $('#message').val('');
             },
-           error:function(xhr, ajaxOptions, thrownError){
-
-               console.log('Erreur de la transaction ajax')
+           error:function(){
+                console.log('Erreur de la transaction ajax')
            }
        })
-            });
-            });
+    });
+});

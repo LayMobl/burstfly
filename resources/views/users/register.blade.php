@@ -1,17 +1,18 @@
+{{----}}
+{{--./ressources/views/users/register.blade.php--}}
+{{--Variables disponibles:--}}
+{{---Table user--}}
+{{----}}
+
 @extends('welcome')
 @section('title')
     Nouvel utilisateur
 @endsection()
 @section('content')
 
-
-
     <div id="wrapper-container">
-
         <div class="container object">
-
             <div style="text-align: center">
-
                 <h2>Inscription</h2>
                 <form method="POST" action="{{route('app_user_store')}}">
                     {{ csrf_field() }}
@@ -40,13 +41,8 @@
                         <button style="cursor:pointer" type="submit" class="btn btn-primary">Inscription</button>
                     </div>
                 </form>
-
-
-
-                </div>
             </div>
         </div>
-
     </div>
 
     <div id="wrapper-thank">

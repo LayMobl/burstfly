@@ -5,39 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Newsletter;
 
+/**
+ * Class NewsletterController
+ * @package App\Http\Controllers
+ */
 class NewsletterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Illuminate\Validation\ValidationException
+     * Je sauvegarde dans le DB et je retourne la vue en fonction de la présence dans la DB
      */
     public function store(Request $request)
     {
         $email = $request->get('email');
         if (Newsletter::where('email', '=', $email)->exists()) {
-            return view('newsletter')->with(['email' => $email, 'success' => 0]);
+            return view('newsletters.newsletter')->with(['email' => $email, 'success' => 0]);
         } else {
             $this->validate($request, [
                 'email' => 'required'
@@ -46,53 +31,7 @@ class NewsletterController extends Controller
                 'email' => $email
             ]);
             $newsletter->save();
-            return view('newsletter')->with(['email' => $email, 'success' => 1]);
+            return view('newsletters.newsletter')->with(['email' => $email, 'success' => 1]);
         }
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

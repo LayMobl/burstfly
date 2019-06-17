@@ -46,16 +46,12 @@ class User extends \TCG\Voyager\Models\User
     }
 
 
-
-
-  public function isAdmin()
- {
-    $result = $this->where('id',Auth::id())
-                   ->where('role_id', 1)
-                   ->first();
-    return $result;
- }
-
-
+    public function isAdmin()
+    {
+        $result = $this->where('id',Auth::id())
+                       ->where('role_id', 1)
+                       ->first();
+        return $result;
+    }
 
 }
