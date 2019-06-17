@@ -12,6 +12,7 @@
   <link rel="icon" type="image/png" href="{{asset('img/small-logo-01.png')}}">
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,900,900italic,700italic,700,500italic,400italic,500,300italic,300' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='{{asset('css/app.css')}}' rel='stylesheet' type='text/css'>
 	<link href='{{asset('style.css')}}' rel='stylesheet' type='text/css'>
 
 	@if (Route::current()->getName() == 'app_work_show')
@@ -31,7 +32,7 @@
 
 <div id="wrapper-header">
 	<div id="main-header" class="object">
-		<div class="logo"><img src="{{asset('img/logo-burst.png')}}" alt="logo platz" height="38" width="90"></div>
+		<div class="logo"><a href="{{route('app_homepage')}}"><img src="{{asset('img/logo-burst.png')}}" alt="logo platz" height="38" width="90"></a></div>
 
         <div id="main_tip_search">
 			<form>
@@ -40,25 +41,14 @@
 		</div>
         <div id="stripes"></div>
     </div>
-</div>
-<div style="background-color:#2E2D30;padding-left:7.3rem;">
-	@if (auth()->check())
-						@if (auth()->user()->isAdmin())
 
-								<div>
-									Hello {{Auth::user()->name}} <a href="{{url('admin')}}">Panneau d'administration</a> | <a href="{{route('logout')}}">(Logout)</a>
-								</div>
-						@else
-									<div>Hello {{Auth::user()->name}} <a href="{{url('app_homepage')}}">Mon profil</a> | <a href="{{route('logout')}}">(Logout)</a></div>
-						@endif
-@else
- <a href="{{url('admin')}}">Se connecter</a>|<a href="">S'inscrire</a>
-@endif
 </div>
+
 
 <!-- NAVBAR -->
 @inject('tag', 'App\Http\Controllers\TagController')
 {!! $tag->index() !!}
+
 
 
 

@@ -14,8 +14,9 @@ class Work extends Model
   {
       return $this->belongsTo('App\Tag');
   }
-  public function user()
-  {
-      return $this->belongsTo('App\User');
-  }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
