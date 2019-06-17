@@ -34,7 +34,7 @@ class WorkController extends Controller
     public function indexUser($id)
     {
 
-        return view('works.indexUser', ['works' => Work::where('user_id',$id)->limit(8)->get()]);
+        return view('works.indexUser', ['works' => Work::where('user_id',$id)->get()]);
     }
 
     public function download()

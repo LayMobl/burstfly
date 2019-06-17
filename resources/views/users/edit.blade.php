@@ -4,12 +4,6 @@
 @endsection()
 @section('content')
 
-    @extends('welcome')
-@section('title')
-    Profil de {{$user->name}}
-@endsection()
-@section('content')
-
 
 
 
@@ -21,7 +15,7 @@
             <div style="text-align: center">
 
                 <div>
-                    <p style="font-weight: bold; font-size: 30px;">Profil de {{$user->name}}</p>
+                    <p style="font-family: Helvetica; font-weight: bold; font-size: 50px;">Modification de {{$user->name}}</p>
                 </div>
 
                 <div>
@@ -51,10 +45,6 @@
 
                 </div>
             </div>
-
-            <p style="font-weight: bold; font-size: 26px;">Tous les works de {{$user->name}}</p>
-            @inject('works', 'App\Http\Controllers\WorkController')
-            {!! $works->indexUser($user->id) !!}
         </div>
 
     </div>
@@ -66,4 +56,4 @@
     </div>
 
 @endsection
-@endsection
+

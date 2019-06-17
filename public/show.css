@@ -170,7 +170,6 @@ letter-spacing:1.5px;
 
 #fleche-nav-1,#fleche-nav-2,#fleche-nav-3{
 float:left;
-margin-top:26px;
 background: url({{asset('img/fleche-nav.svg')}}) no-repeat ;
 width:5px;
 height:10px;
@@ -293,7 +292,6 @@ opacity:0;
 .work figure {
   float:left;
 width: 50%;
-margin-left:7.5%;
   height:auto;
   padding: 0 !important;
   transition: all 0.3s ease-in-out;
@@ -459,7 +457,6 @@ padding-top:7.5%;
 .post-reply,.post-reply-2{
 float:left;
 width:53%;
-margin-left:4%;
   height:auto;
 }
 
@@ -607,7 +604,6 @@ textarea.placeholder {
 .title-item{
 float:left;
 width:92.5%;
-margin-left:7.5%;
 height:68px;
 margin-bottom:10px;
 }
@@ -787,7 +783,6 @@ margin-top:20px;
   font: 15px/1.6 Helvetica, sans-serif;
 color: #CCC;
 padding: 5px 5px 5px 46px;
-width: 170px;
 border:solid 2px #CCC;
 border-radius: 5px;
 -moz-appearance: none;
@@ -817,7 +812,6 @@ display:block;
   font: 16px/1.6 'Roboto',sans-serif;
 color: #686868;
 padding: 4px 4px 4px 46px;
-width: 170px;
 border:solid 1px #FFF;
 border-radius: 5px;
 -moz-appearance: none;

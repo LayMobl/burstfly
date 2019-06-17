@@ -15,7 +15,7 @@
             <div style="text-align: center">
 
                 <div>
-                    <p style="font-weight: bold; font-size: 30px;">Profil de {{$user->name}}</p>
+                    <p style="font-family: Helvetica; font-weight: bold; font-size: 50px;">Profil de {{$user->name}}</p>
                 </div>
 
                 <div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <p style="font-weight: bold; font-size: 26px;">Tous les works de {{$user->name}}</p>
+            <p style="margin-top: 5rem; font-family: Helvetica; font-weight: bold; font-size: 35px;">Tous les works de {{$user->name}}</p>
             @inject('works', 'App\Http\Controllers\WorkController')
             {!! $works->indexUser($user->id) !!}
         </div>

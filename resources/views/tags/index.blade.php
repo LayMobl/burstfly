@@ -10,7 +10,24 @@
 								<img src="{{asset('img/'.$tag->image)}}" alt="{{$tag->name}}" title="{{$tag->name}}" height="28" width="28">
 							</a>
             	@endforeach
+
+
 			</div>
+            <div><a href="{{route('app_homepage')}}">Réinitialiser les filtres</a></div>
+            <div>
+                @if (auth()->check())
+                    @if (auth()->user()->isAdmin())
+
+                        <div>
+                            Hello {{Auth::user()->name}} <a href="{{url('admin')}}">Panneau d'administration </a> | <a href="{{route('logout')}}"> (Logout)</a>
+                        </div>
+                    @else
+                        <div>Hello {{Auth::user()->name}} <a href="{{route('app_user_show',['id' => Auth::user()->id, 'name' => Auth::user()->name])}}">Mon profil </a> | <a href="{{route('logout')}}"> (Logout)</a></div>
+                    @endif
+                @else
+                    <a href="{{url('admin')}}">Se connecter </a>|<a href="{{route('app_user_create')}}"> S'inscrire</a>
+                @endif
+            </div>
     	</div>
     </div>
 
@@ -51,5 +68,7 @@
                 <div class="photo"><a href="#">Free stock photos</a></div>
             </div>
 
+
         </div>
     </div>
+
